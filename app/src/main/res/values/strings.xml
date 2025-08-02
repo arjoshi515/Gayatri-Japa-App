@@ -1,0 +1,231 @@
+<resources>
+    <string name="app_name">Gayatri Japa App</string>
+
+        <!-- Language Selection -->
+        <string name="select_language">Select Language</string>
+        <string name="english">English</string>
+        <string name="hindi">हिंदी</string>
+        <string name="kannada">ಕನ್ನಡ</string>
+        <string name="language_changed">Language changed successfully</string>
+
+        <!-- Common -->
+        <string name="ok">OK</string>
+        <string name="cancel">Cancel</string>
+        <string name="save">Save</string>
+        <string name="delete">Delete</string>
+        <string name="edit">Edit</string>
+        <string name="add">Add</string>
+        <string name="search">Search</string>
+        <string name="settings">Settings</string>
+        <string name="back">Back</string>
+        <string name="next">Next</string>
+        <string name="done">Done</string>
+        <string name="close">Close</string>
+
+        <!-- Login -->
+        <string name="welcome_message">Welcome to Gayatri Japa App</string>
+        <string name="enter_name">Enter your full name</string>
+        <string name="enter_mobile">Enter mobile number</string>
+        <string name="login_register">Login / Register</string>
+        <string name="full_name">Full Name</string>
+        <string name="mobile_number">Mobile Number</string>
+
+        <!-- Japa -->
+        <string name="gayatri_mantra">Gayatri Mantra</string>
+        <string name="add_custom_japa">Add Custom Japa</string>
+        <string name="my_japas">My Japas</string>
+        <string name="japa_name">Japa Name</string>
+        <string name="mantra">Mantra</string>
+        <string name="target_count">Target Count</string>
+        <string name="current_count">Current Count</string>
+        <string name="complete_japa">Complete Japa</string>
+        <string name="japa_completed">Japa Completed!</string>
+        <string name="tap_to_add">Tap to add %d</string>
+        <string name="japa_count">%d / %d</string>
+        <string name="start_japa">Start Japa</string>
+
+        <!-- Sankalp -->
+        <string name="sankalp">Sankalp</string>
+        <string name="sankalp_title">Sankalp</string>
+        <string name="sankalp_done">Sankalp Competed - Start Japa</string>
+        <string name="sankalp_text">मैं आज से अपने जप का संकल्प लेता/लेती हूँ।\n\nभगवान की कृपा से मैं इस जप को पूर्ण करूंगा/करूंगी।\n\nयह जप मेरे मन की शुद्धता और आध्यात्मिक उन्नति के लिए है।\n\nॐ शांति शांति शांति:</string>
+        <string name="target_label">Target: %d times</string>
+
+        <!-- History -->
+        <string name="history">History</string>
+        <string name="add_remarks">Add Remarks</string>
+        <string name="remarks">Remarks</string>
+        <string name="completed">Completed</string>
+        <string name="in_progress">In Progress</string>
+        <string name="japa_history">Japa History</string>
+        <string name="total_japas">Total: %d</string>
+        <string name="track_journey">Track your spiritual journey and add remarks</string>
+        <string name="no_history_found">No Japa History Found</string>
+        <string name="start_journey">Start your spiritual journey by\nadding and completing japas</string>
+        <string name="start_first_japa">Start Your First Japa</string>
+        <string name="tap_to_add_remarks">Tap to add remarks</string>
+        <string name="all">All</string>
+        <string name="filter">Filter</string>
+
+        <!-- Settings -->
+        <string name="japa_increment">Japa Increment</string>
+        <string name="change_increment">Change Increment</string>
+        <string name="logout">Logout</string>
+        <string name="japa_settings">Japa Settings</string>
+        <string name="increment_per_tap">Japa Increment per tap</string>
+        <string name="change">Change</string>
+        <string name="change_japa_increment">Change Japa Increment</string>
+        <string name="increment_instruction">Set how many japas should be added with each tap on the japa image:</string>
+        <string name="increment_value">Increment Value</string>
+        <string name="increment_recommendation">Recommended: 1, 5, 10, or 108</string>
+        <string name="language">Language</string>
+        <string name="change_language">Change Language</string>
+
+        <!-- Validation Messages -->
+        <string name="please_enter_name">Please enter your name</string>
+        <string name="please_enter_mobile">Please enter mobile number</string>
+        <string name="invalid_mobile">Please enter valid 10-digit mobile number</string>
+        <string name="please_enter_japa_name">Please enter japa name</string>
+        <string name="please_enter_mantra">Please enter mantra</string>
+        <string name="please_enter_target_count">Please enter target count</string>
+        <string name="invalid_target_count">Please enter valid target count</string>
+        <string name="please_enter_increment">Please enter increment value</string>
+        <string name="invalid_increment">Please enter valid increment value</string>
+        <string name="please_enter_count">Please enter count</string>
+        <string name="invalid_count">Please enter valid count</string>
+
+        <!-- Dialog Messages -->
+        <string name="add_custom_japa_title">Add Custom Japa</string>
+        <string name="japa_completion_title">🎉 Japa Completed!</string>
+        <string name="completion_message">Congratulations! You have completed your japa.</string>
+        <string name="add_remarks_question">Would you like to add any remarks about this session?</string>
+        <string name="remarks_optional">Remarks (Optional)</string>
+        <string name="skip">Skip</string>
+        <string name="add_quick_count">Add Quick Count</string>
+        <string name="enter_count_to_add">Enter the number of japas to add:</string>
+        <string name="count">Count</string>
+        <string name="update">Update</string>
+        <string name="add_remarks_for">Add Remarks for %s</string>
+        <string name="total_count_display">Total Count: %d / %d</string>
+        <string name="add_your_remarks">Add your remarks</string>
+
+        <!-- Navigation -->
+        <string name="japa_selection">Japa Selection</string>
+        <string name="japa">Japa</string>
+
+
+    <!-- Japa Status -->
+    <string name="not_started">Not Started</string>
+    <string name="tap_to_start">Tap to start</string>
+    <string name="tap_to_continue">Tap to continue</string>
+    <string name="japa_completed_status">Japa Completed!</string>
+    <string name="target_reached">Target Reached!</string>
+    <string name="continue_japa">Continue Japa</string>
+    <string name="view_history">View History</string>
+
+    <!-- Completion Dialog -->
+    <string name="target_reached_message">Congratulations! You have reached your target count. Would you like to complete this japa or continue?</string>
+    <string name="complete_japa_button">Complete Japa</string>
+    <string name="continue_japa_button">Continue Japa</string>
+
+    <!-- Additional Japa Related Strings -->
+    <string name="japa_in_progress">In Progress</string>
+    <string name="japa_paused">Paused</string>
+    <string name="resume_japa">Resume Japa</string>
+    <string name="start_new_japa">Start New Japa</string>
+    <string name="japa_session">Japa Session</string>
+    <string name="session_time">Session Time</string>
+    <string name="total_sessions">Total Sessions</string>
+    <string name="average_per_session">Average per Session</string>
+    <string name="completion_rate">Completion Rate</string>
+    <string name="days_to_complete">Days to Complete</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="well_done">Well Done!</string>
+    <string name="keep_going">Keep Going!</string>
+    <string name="almost_there">Almost There!</string>
+    <string name="excellent_progress">Excellent Progress!</string>
+
+    <!-- Motivational Messages -->
+    <string name="milestone_25_percent">You\'re 25% there! Great start!</string>
+    <string name="milestone_50_percent">Halfway there! Keep up the good work!</string>
+    <string name="milestone_75_percent">75% complete! You\'re almost there!</string>
+    <string name="milestone_90_percent">90% done! Just a little more!</string>
+    <string name="daily_goal_reached">Daily goal reached! Well done!</string>
+    <string name="streak_message">%d days streak! Amazing dedication!</string>
+    <string name="first_japa_complete">Your first japa is complete! Congratulations!</string>
+
+
+    <string name="sankalpa_mantra">
+        <![CDATA[
+        <b>ಸಂಕಲ್ಪ :</b>
+
+        ಶ್ರೀಗುರುಭೋ ನಮಃ ಪರಮ ಗುರುಭೋ ನಮಃ ಶ್ರೀಮದಾನಂದತೀರ್ಥ ಭಗವತ್ಪಾದಾಚಾರ್ಯ ಗುರುಭೋನಮಃ
+
+        <b>ಅಥ ಆಚಮನಮ್ :</b>
+
+        1) ಓಂ ಕೇಶವಾಯ ಸ್ವಾಹಾ
+
+        2) ಓಂ ನಾರಾಯಣಾಯ ಸ್ವಾಹಾ,
+
+        3) ಓಂ ಮಾಧವಾಯ ಸ್ವಾಹಾ
+
+        4) ಓಂ ಗೋವಿಂದಾಯ ನಮಃ,
+
+        5) ಓಂ ವಿಷ್ಣವೇ ನಮಃ
+
+        6) ಓಂ ಮಧೂಸೂದನಾಯ ನಮಃ,
+
+        7) ಓಂ ತ್ರಿವಿಕ್ರಮಾಯ ನಮಃ
+
+        8) ಓಂ ವಾಮನಾಯ ನಮಃ,
+
+        9) ಓಂ ಶ್ರೀಧರಾಯ ನಮಃ
+
+        10) ಓಂ ಹೃಷೀಕೇಶಾಯ ನಮಃ
+
+        11) ಓಂ ಪದ್ಮನಾಭಾಯ ನಮಃ
+
+        12) ಓಂ ದಾಮೋದರಾಯ ನಮಃ
+
+        13) ಓಂ ಸಂಕರ್ಷಣಾಯ ನಮಃ
+
+        14) ಓಂ ವಾಸುದೇವಾಯ ನಮಃ
+
+        15) ಓಂ ಪ್ರದ್ಯುಮ್ನಾಯ ನಮಃ
+
+        16) ಓಂ ಅನಿರುದ್ಧಾಯ ನಮಃ
+
+        17) ಓಂ ಪುರುಷೋತ್ತಮಾಯ ನಮಃ
+
+        18) ಓಂ ಅಧೋಕ್ಷಜಾಯ ನಮಃ
+
+        19) ಓಂ ನಾರಸಿಂಹಾಯ ನಮಃ
+
+        20) ಓಂ ಅಚ್ಯುತಾಯ ನಮಃ
+
+        21) ಓಂ ಜನಾರ್ದನಾಯ ನಮಃ
+
+        22) ಓಂ ಉಪೇಂದ್ರಾಯ ನಮಃ
+
+        23) ಓಂ ಹರಯೇ ನಮಃ
+
+        24) ಓಂ ಶ್ರೀ ಕೃಷ್ಣಾಯ ನಮಃ
+
+        <b>ಪ್ರಾಣಾಯಾಮ :-</b>
+
+        ಪ್ರಣವಸ್ಯ ಪರಬ್ರಹ್ಮ ಋಷಿಃ | ಪರಮಾತ್ಮಾ ದೇವತಾ | ದೈವೀ ಗಾಯಿತ್ರೀ ಛಂಧಃ | ಪ್ರಾಣಾಯಾಮೇ ವಿನಿಯೋಗಃ ॥ ಓಂ ಭೂಃ । ಓಂ ಭುವಃ । ಓಂ ಸ್ವಃ | ಓಂ ಮಹಃ । ಓಂ ಜನಃ | ಓಂ ತಪಃ। ಓಂ ಸತ್ಯಂ | ಓಂ ತತ್ಸವಿತುರ್ವರೇಣ್ಯಂ ಭರ್ಗೋ ದೇವಸ್ಯ ಧೀಮಹಿ | ಧೀಯೋ ಯೋ ನಃ ಪ್ರಚೋದಯಾತ್ || ಓಂ ಆಪೋಜ್ಯೋತಿ ರಸೋsಮೃತಂ ಬ್ರಹ್ಮ ಭುರ್ಭುವಸ್ವರೋಮ್ ॥
+
+        <b>ಅಥ ಸಂಕಲ್ಪ :-</b>
+
+        ಶ್ರೀಗೋವಿಂದಗೋವಿಂದ ಶ್ರೀಮದ್ಭಗವತೋ ಮಹಾಪುರುಷಸ್ಯ ಶ್ರೀವಿಷ್ಟೋರಾಜ್ಞಯಾ ಪ್ರವರ್ತಮಾನಸ್ಯ ಆದ್ಯಬ್ರಹ್ಮಣಃ ದ್ವಿತೀಯಪರಾರ್ಧೆ ಶ್ರೀಶ್ವೇತವರಾಹಕಲೇ ವೈವಸ್ವತಮನ್ವಂತರೇ ಕಲಿಯುಗೇ ಪ್ರಥಮಚರಣೇ ಭರತವರ್ಷೇ ಭರತಖಂಡೇ ಜಂಬೂದ್ವೀಪೇ ದಂಡಕಾರಣ್ಯ ದೇಶೇ ಗೋದಾವರ್ಯಾಃ ದಕ್ಷಿಣೇ ತೀರೇ ಶಾಲಿವಾಹನಶಕೇ ಬೌದ್ಧಾವತಾರೇ ರಾಮಕ್ಷೇತ್ರೇ ಅಸ್ಮಿನ್ ವರ್ತಮಾನೇ ಚಾಂದ್ರಮಾನೇ.... ನಾಮಸಂವತ್ಸರೇ....ಆಯನೇ ....ಋತೌ ....ಮಾಸೇ ....ಪಕ್ಷೇ....ತಿಥ್‌....ವಾಸರೇ...ನಕ್ಷತೇ ಶುಭಯೋಗೇ ಶುಭಕರಣೇ ಏವಂಗುಣ ವಿಶೇಷಣ ವಿಶಿಷ್ಟಾಯಾಂ ಶುಭತಿಥ್ ಮಮ ಆತ್ಮನಃ ಸಕಲಶ್ರುತಿ-ಸ್ಮೃತಿಪುರಾಣೋಕ್ತ ಫಲಪ್ರಾಪ್ತರ್ಥಂ ಅಸ್ಮಾಕಂ ಸರ್ವೇಷಾಂ ಸಹಕುಟುಂಬಾನಾಂ ಕ್ಷೇಮ-ಸ್ಥೆರ್ಯ-ವಿಜಯ ಆಯುಃ-ಆರೋಗ್ಯ-ಐಶ್ವರ್ಯಾಭಿವೃದ್ಧರ್ಥಂ ವಿಶೇಷತಃ ಜ್ಞಾನ-ಭಕ್ತಿ-ವೈರಾಗ್ಯಾದಿ ಸಿದ್ಧರ್ಥಂ ಭಾರತೀರಮಣ ಮುಖ್ಯಪ್ರಾಣಾಂತರ್ಗತ ಶ್ರೀಸೀತಾಪತಿ ಶ್ರೀಮನ್ಮೂಲರಾಮಚಂದ್ರ ಪ್ರೇರಣಯಾ ಶ್ರೀಸೀತಾಪತಿ ಶ್ರೀಮನ್ಮೂಲರಾಮಚಂದ್ರ ಪ್ರೀತ್ಯರ್ಥಂ .......... ಕರಿಷ್ಟೇ |
+        ]]>
+    </string>
+    <string name="gayatri_java_text">gayatri Japa</string>
+    <string name="gayatri_mantra_text">
+        <![CDATA[ <b>ಓಂ (Om)
+                  ಭೂರ್ಭುವಃ ಸ್ವಃ (Bhur Bhuvah Svah)
+                  ತತ್ಸವಿತ್ತುರ್ವರೇಣ್ಯಂ (Tatsaviturvarenyam)
+                  ಭರ್ಗೋ ದೇವಸ್ಯ ಧೀಮಹಿ (Bhargo Devasya Dheemahi)
+                  ಧಿಯೋ ಯೋ ನಃ ಪ್ರಚೋದಯಾತ್ ||(Dhiyo Yo Nah Prachodayat) </b>]]>
+    </string>
+</resources>

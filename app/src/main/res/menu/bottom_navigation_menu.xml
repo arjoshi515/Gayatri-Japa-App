@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sankalp Tab - This will use default japaId -->
+    <item
+        android:id="@+id/sankalpFragment"
+        android:icon="@drawable/ic_book"
+        android:title="@string/sankalp_title"
+        android:enabled="true" />
+
+    <!-- Japa Selection Tab (Main/Center Tab) -->
+    <item
+        android:id="@+id/japaSelectionFragment"
+        android:icon="@drawable/ic_japa_mani"
+        android:title="@string/japa"
+        android:enabled="true" />
+
+    <!-- History Tab -->
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/ic_history"
+        android:title="@string/history"
+        android:enabled="true" />
+
+    <!-- Settings Tab -->
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings"
+        android:enabled="true" />
+
+</menu>

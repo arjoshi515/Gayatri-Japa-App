@@ -1,0 +1,211 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.shreeramarchakaru.gayatrijapa.ui.japa.JapaViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/japa_background"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvJapaName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{viewModel.japa.name}"
+            android:textColor="@color/primary_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Status indicator -->
+        <TextView
+            android:id="@+id/tvJapaStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@{viewModel.isJapaCompleted ? @drawable/bg_completed : @drawable/bg_in_progress}"
+            android:padding="6dp"
+            android:text="@{viewModel.isJapaCompleted ? `Completed` : `In Progress`}"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvJapaName" />
+
+        <TextView
+            android:id="@+id/tvCurrentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{String.valueOf(viewModel.currentCount)}"
+            android:textColor="@color/accent_color"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvJapaStatus" />
+
+        <TextView
+            android:id="@+id/tvTargetCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`/ ` + viewModel.japa.targetCount}"
+            android:textColor="@color/text_secondary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/tvCurrentCount"
+            app:layout_constraintTop_toTopOf="@+id/tvCurrentCount"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCurrentCount" />
+
+        <!-- Progress indicator -->
+        <ProgressBar
+            android:id="@+id/progressBarJapa"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="32dp"
+            android:max="@{viewModel.japa.targetCount}"
+            android:progress="@{viewModel.currentCount}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentCount" />
+
+        <ImageView
+            android:id="@+id/ivJapaImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@drawable/circle_background"
+            android:clickable="@{!viewModel.isJapaCompleted}"
+            android:focusable="@{!viewModel.isJapaCompleted}"
+            android:src="@drawable/japa_hand_count"
+            android:alpha="@{viewModel.isJapaCompleted ? 0.6f : 1.0f}"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarJapa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            />
+
+<!--        <ImageView
+            android:id="@+id/ivJapaImage"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/circle_background"
+            android:clickable="@{!viewModel.isJapaCompleted}"
+            android:focusable="@{!viewModel.isJapaCompleted}"
+            android:padding="20dp"
+            android:src="@drawable/japa_hand_count"
+            android:alpha="@{viewModel.isJapaCompleted ? 0.6f : 1.0f}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarJapa" />-->
+
+        <TextView
+            android:id="@+id/tvTapInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.isJapaCompleted ? `Japa Completed!` : `Tap to add ` + viewModel.japaIncrement}"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivJapaImage" />
+
+        <LinearLayout
+            android:id="@+id/llCountControls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:visibility="@{viewModel.isJapaCompleted ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTapInstruction">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDecrease"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:text="-"
+                android:textSize="20sp"
+                app:cornerRadius="24dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIncrease"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="+"
+                android:textSize="20sp"
+                app:cornerRadius="24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llQuickCounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:visibility="@{viewModel.isJapaCompleted ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llCountControls">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn108"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="108"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn1008"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1008"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnComplete"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{viewModel.isJapaCompleted ? `View History` : `Complete Japa`}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llQuickCounts" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

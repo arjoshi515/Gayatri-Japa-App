@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base gradient background -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#FFF3E0"
+                android:centerColor="#FFE0B2"
+                android:endColor="#FFCC80"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Subtle pattern overlay -->
+    <item android:top="0dp" android:left="0dp">
+        <shape android:shape="oval">
+            <solid android:color="#10FF6B35" />
+            <size android:width="200dp" android:height="200dp" />
+        </shape>
+    </item>
+
+    <item android:top="100dp" android:left="150dp">
+        <shape android:shape="oval">
+            <solid android:color="#08FFA726" />
+            <size android:width="150dp" android:height="150dp" />
+        </shape>
+    </item>
+
+    <item android:top="300dp" android:left="50dp">
+        <shape android:shape="oval">
+            <solid android:color="#05FF8F00" />
+            <size android:width="100dp" android:height="100dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120"
+    android:tint="?attr/colorOnSurface"
+    android:alpha="0.5">
+
+    <!-- Book / Scroll Outline -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M20,20 L100,20 Q110,20 110,30 L110,90 Q110,100 100,100 L20,100 Q10,100 10,90 L10,30 Q10,20 20,20 Z" />
+
+    <!-- Scroll Lines -->
+    <path
+        android:pathData="M25,35 L95,35 M25,45 L95,45 M25,55 L95,55 M25,65 L85,65 M25,75 L90,75 M25,85 L80,85"
+        android:strokeWidth="2"
+        android:strokeColor="#E0E0E0"
+        android:fillColor="@android:color/transparent" />
+
+    <!-- Empty Indicator Circle -->
+    <path
+        android:fillColor="#F5F5F5"
+        android:pathData="M60,45
+                          A15,15 0 1,0 60,75
+                          A15,15 0 1,0 60,45" />
+
+    <!-- X Icon inside the Circle -->
+    <path
+        android:pathData="M55,55 L65,65 M65,55 L55,65"
+        android:strokeWidth="3"
+        android:strokeColor="#BDBDBD"
+        android:fillColor="@android:color/transparent" />
+</vector>

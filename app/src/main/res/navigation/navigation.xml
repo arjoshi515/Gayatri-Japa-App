@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/japaSelectionFragment">
+
+
+    <fragment
+        android:id="@+id/japaSelectionFragment"
+        android:name="com.shreeramarchakaru.gayatrijapa.ui.selection.JapaSelectionFragment"
+        android:label="Japa Selection">
+        <action
+            android:id="@+id/action_selection_to_sankalp"
+            app:destination="@id/sankalpFragment" />
+        <action
+            android:id="@+id/action_selection_to_japa"
+            app:destination="@id/japaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sankalpFragment"
+        android:name="com.shreeramarchakaru.gayatrijapa.ui.selection.sankalp.SankalpFragment"
+        android:label="Sankalp">
+        <action
+            android:id="@+id/action_sankalp_to_japa"
+            app:destination="@id/japaFragment" />
+        <!-- Remove app:nullable="true" and use default value -->
+        <argument
+            android:name="japaId"
+            app:argType="long"
+            android:defaultValue="1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/japaFragment"
+        android:name="com.shreeramarchakaru.gayatrijapa.ui.japa.JapaFragment"
+        android:label="Japa">
+        <!-- Remove app:nullable="true" and use default value -->
+        <argument
+            android:name="japaId"
+            app:argType="long"
+            android:defaultValue="1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.shreeramarchakaru.gayatrijapa.ui.history.HistoryFragment"
+        android:label="History" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.shreeramarchakaru.gayatrijapa.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+</navigation>
