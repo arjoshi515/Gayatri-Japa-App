@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.shreeramarchakaru.gayatrijapa.R
 import com.shreeramarchakaru.gayatrijapa.data.models.Japa
 import com.shreeramarchakaru.gayatrijapa.databinding.FragmentHistoryBinding
-import com.shreeramarchakaru.gayatrijapa.ui.history.adapter.HistoryAdapter
 import com.shreeramarchakaru.gayatrijapa.utils.common.BaseFragment
 
 class HistoryFragment : BaseFragment() {

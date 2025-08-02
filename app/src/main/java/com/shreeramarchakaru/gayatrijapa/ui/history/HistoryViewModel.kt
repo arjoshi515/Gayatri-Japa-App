@@ -1,5 +1,6 @@
 package com.shreeramarchakaru.gayatrijapa.ui.history
 
+
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -8,110 +9,62 @@ import androidx.lifecycle.viewModelScope
 import com.shreeramarchakaru.gayatrijapa.data.database.JapaDatabase
 import com.shreeramarchakaru.gayatrijapa.data.models.Japa
 import com.shreeramarchakaru.gayatrijapa.data.repository.JapaRepository
-import com.shreeramarchakaru.gayatrijapa.utils.TraceUtils
+
 import kotlinx.coroutines.launch
 
 class HistoryViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: JapaRepository
 
-    private val _japas = MutableLiveData<List<Japa>>()
-    val japas: LiveData<List<Japa>> = _japas
+    val japas: LiveData<List<Japa>>
+
+    private val _totalJapas = MutableLiveData<Int>()
+    val totalJapas: LiveData<Int> = _totalJapas
+
+    private val _isHistoryEmpty = MutableLiveData<Boolean>()
+    val isHistoryEmpty: LiveData<Boolean> = _isHistoryEmpty
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private val _navigateToJapa = MutableLiveData<Long?>()
-    val navigateToJapa: LiveData<Long?> = _navigateToJapa
+    private val _filterType = MutableLiveData<FilterType>()
+    val filterType: LiveData<FilterType> = _filterType
+
+    enum class FilterType {
+        ALL, COMPLETED, IN_PROGRESS
+    }
 
     init {
         val database = JapaDatabase.getDatabase(application)
         repository = JapaRepository(database.japaDao())
-        loadHistory()
+        japas = repository.getAllJapas()
+
+        _filterType.value = FilterType.ALL
+        _isLoading.value = false
+
+        // Observe japas to update total count and empty state
+        japas.observeForever { japaList ->
+            _totalJapas.value = japaList.size
+            _isHistoryEmpty.value = japaList.isEmpty()
+            _isLoading.value = false
+        }
     }
 
-    private fun loadHistory() {
-        _isLoading.value = true
+    fun addRemarks(japaId: Long, remarks: String) {
         viewModelScope.launch {
-            try {
-                val allJapas = repository.getAllJapas()
-                // Sort by most recent activity (completed first, then by updated time)
-                val sortedJapas = allJapas.sortedWith(
-                    compareByDescending<Japa> { it.completedAt ?: 0 }
-                        .thenByDescending { it.startedAt ?: 0 }
-                        .thenByDescending { it.updatedAt }
-                )
-                _japas.value = sortedJapas
-                TraceUtils.logE("HistoryViewModel", "Loaded ${sortedJapas.size} japas")
-            } catch (e: Exception) {
-                TraceUtils.logException(e)
-                _japas.value = emptyList()
-            } finally {
-                _isLoading.value = false
-            }
+            // Implementation to add remarks to japa session
+            // This would require updating the database schema to include remarks in Japa table
+            // or creating a separate remarks table
         }
     }
 
-    fun onJapaClicked(japa: Japa) {
-        if (!japa.isCompleted) {
-            // Navigate to continue the japa
-            _navigateToJapa.value = japa.id
-        } else {
-            // Show japa details or statistics
-            showJapaDetails(japa)
-        }
-    }
-
-    private fun showJapaDetails(japa: Japa) {
-        // TODO: Implement japa details dialog or navigation
-        TraceUtils.logE("HistoryViewModel", "Show details for completed japa: ${japa.name}")
-    }
-
-    fun onNavigatedToJapa() {
-        _navigateToJapa.value = null
+    fun setFilter(filterType: FilterType) {
+        _filterType.value = filterType
+        // Implement filtering logic here
     }
 
     fun refreshHistory() {
-        loadHistory()
-    }
-
-    fun deleteJapa(japa: Japa) {
-        viewModelScope.launch {
-            try {
-                repository.deleteJapa(japa.id)
-                loadHistory() // Refresh the list
-                TraceUtils.logE("HistoryViewModel", "Deleted japa: ${japa.name}")
-            } catch (e: Exception) {
-                TraceUtils.logException(e)
-            }
-        }
-    }
-
-    fun getCompletedJapasCount(): LiveData<Int> {
-        val result = MutableLiveData<Int>()
-        viewModelScope.launch {
-            try {
-                val count = repository.getCompletedJapasCount()
-                result.postValue(count)
-            } catch (e: Exception) {
-                TraceUtils.logException(e)
-                result.postValue(0)
-            }
-        }
-        return result
-    }
-
-    fun getTotalJapaCount(): LiveData<Int> {
-        val result = MutableLiveData<Int>()
-        viewModelScope.launch {
-            try {
-                val count = repository.getTotalJapaCount()
-                result.postValue(count)
-            } catch (e: Exception) {
-                TraceUtils.logException(e)
-                result.postValue(0)
-            }
-        }
-        return result
+        _isLoading.value = true
+        // The LiveData will automatically update when database changes
     }
 }
